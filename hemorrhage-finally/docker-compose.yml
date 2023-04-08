@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: web-hemorrhage-ai
+    volumes:
+      - ./:/web-app-ml
+      - /web-app-ml/node_modules
+      - /web-app-ml/.next
+
+    ports:
+      - 3002:3002
+    networks:
+      - connect-backend
+    
+networks:
+  connect-backend:
+    name: hemorrhage-api-docker-test_default
+   
+  

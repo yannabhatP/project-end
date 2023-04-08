@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  go:
+    build: # Use the Dockerfile from the current directory to build container.
+      context: .
+      dockerfile: DockerFile
+    container_name: go-web-api-auth
+    ports: 
+      - "4003:4003"
+    depends_on: 
+      - "db"
+
+  db:
+    image: mysql:latest 
+    container_name: db-web-api-auth
+    #command: --default-authentication-plugin=mysql_native_password
+    restart: unless-stopped
+    environment: 
+      MYSQL_USER: user
+      MYSQL_ROOT_PASSWORD: hemorrhage0265
+      MYSQL_PASSWORD: hemorrhage0265
+      MYSQL_DATABASE: hemorrhage 
+    volumes:
+      - my-api:/var/lib/mysql
+    ports:
+      - '30002:3306'
+
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin/phpmyadmin:latest
+    ports:
+     - "4004:80"
+    environment:
+      MYSQL_ROOT_PASSWORD: hemorrhage0265 
+      PMA_HOST: db   # define the address/hostname of the mysql server eg mysql container name.
+      
+
+volumes: 
+  my-api:
