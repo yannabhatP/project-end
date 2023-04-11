@@ -8,7 +8,7 @@ WORKDIR /web-app-ml
 COPY ./ ./
 
 RUN npm install
-RUN npm i sharp
+#RUN npm i sharp
 RUN npm run build
 
 
