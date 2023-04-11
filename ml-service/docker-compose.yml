@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  streamlit-app:
+    container_name: streamlit-service
+    build: streamlit-app
+    ports:
+      - 4006:4006
+    
+  fastapi-app:
+    container_name: fastapi-app
+    build: fastapi-app
+    ports:
+      - 4005:4005
+    

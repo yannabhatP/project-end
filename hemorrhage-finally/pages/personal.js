@@ -39,7 +39,7 @@ export default function Personal({data,per_id,personService,tokenID}) {
     return (
         
         <div className="container" style={{marginTop:'140px'}}>
-            <HeaderPage children={[<GirlIcon/>]} title={`ข้อมูลส่วนตัวผู้ป่วย`}/>
+            <HeaderPage children={<GirlIcon/>} title={`ข้อมูลส่วนตัวผู้ป่วย`}/>
             {Object.keys(person).length === 0 &&
                 <form className="justify-content-center" onSubmit={submitData}>
                     <div className="m-2 p-2 rounded" style={{background:'#7E7CEA'}}>

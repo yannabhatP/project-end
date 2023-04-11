@@ -25,8 +25,9 @@ export default function Result({mlService,per_id,tokenID,person,phaseone,result,
         const res = {
             id:person_id,
             product:event.target.product.value,
-            predict:(resultData[1] === 1) ?"ตกเลือด":"ไม่ตกเลือด"
-    }
+            predict:(resultData[0] === 1) ?"ตกเลือด":"ไม่ตกเลือด"
+        }
+        console.log(resultData)
         await axios.post(resultService,res,{headers: { Authorization: `Bearer ${tokenID}` }})
         .then(()=>router.reload())
         .catch(err => alert(err))
@@ -35,7 +36,7 @@ export default function Result({mlService,per_id,tokenID,person,phaseone,result,
 
         await axios.get(`${resultService}/${per_id}`,{headers: { Authorization: `Bearer ${tokenID}` }})
         .then(data => setResultReq(data.data))
-        .catch(err => alert(err))
+        .catch(err => console.log(err))
 
         if (Object.keys(resultReq).length === 0){
             const data= {

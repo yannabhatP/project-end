@@ -38,7 +38,7 @@ export default function Phasetwo({data,per_id,serviceURL,tokenID}) {
     }
     return (
     <div className="container" style={{marginTop:'140px'}}>
-        <HeaderPage children={[<BabyIcon/>]} title={`ระยะเเรกคลอด`}/>
+        <HeaderPage children={<BabyIcon/>} title={`ระยะเเรกคลอด`}/>
         
         {Object.keys(phasetwo).length === 0 &&
             <form className="justify-content-center rounded" onSubmit={submitData} >

@@ -16,7 +16,6 @@ export default function UpdatePhasetwo({data,per_id,serviceURL,tokenID}) {
     const [phasetwo] = React.useState(data)
     const [service] = React.useState(serviceURL)
     const router = useRouter()
-    console.log(data)
     const changePhaseTwo = async(event) =>{
         event.preventDefault();
         const ph2Form = {
@@ -33,7 +32,7 @@ export default function UpdatePhasetwo({data,per_id,serviceURL,tokenID}) {
       }
     return (
     <div className="container" style={{marginTop:'140px'}}>
-        <HeaderPage children={[<BabyIcon/>]} title={`ระยะเเรกคลอด`}/>
+        <HeaderPage children={<BabyIcon/>} title={`ระยะเเรกคลอด`}/>
             <form className="justify-content-center rounded" onSubmit={changePhaseTwo} >
                 <div className="row g-3 gap-2 m-2 p-2" style={{background:'#AAA8F0'}}>
                     <legend className="fs-5 text-light">เสี่ยงปานกลาง</legend>

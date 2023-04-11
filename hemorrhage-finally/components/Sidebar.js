@@ -42,12 +42,12 @@ export default function Sidebar(){
             </div>
             <div className="offcanvas-body  ">
               <div className="d-grid gap-3 mx-auto"> 
-                <TabSidebar children={[<GirlIcon/>]} title={`ข้อมูลส่วนตัวผู้ป่วย`} url={`/personal`}/>
-                <TabSidebar children={[<PostpartumIcon/>]} title={`ระยะเเรกรับ`} url={`/phaseone`}/>
-                <TabSidebar children={[<BabyIcon/>]} title={`ระยะคลอด`} url={`/phasetwo`}/>
-                <TabSidebar children={[<ResultIcon/>]} title={`ผลลัพธ์`} url={`/result`}/>
-                <TabSidebar children={[<UserIcon/>]} title={`รายชื่อผู้ใช้`} url={`/user`}/>
-                <TabSidebar children={[<LogoutIcon/>]} title={`ออกจากระบบ`} url={`/signout`}/>
+                <TabSidebar children={<GirlIcon/>} title={`ข้อมูลส่วนตัวผู้ป่วย`} url={`/personal`}/>
+                <TabSidebar children={<PostpartumIcon/>} title={`ระยะเเรกรับ`} url={`/phaseone`}/>
+                <TabSidebar children={<BabyIcon/>} title={`ระยะคลอด`} url={`/phasetwo`}/>
+                <TabSidebar children={<ResultIcon/>} title={`ผลลัพธ์`} url={`/result`}/>
+                <TabSidebar children={<UserIcon/>} title={`รายชื่อผู้ใช้`} url={`/user`}/>
+                <TabSidebar children={<LogoutIcon/>} title={`ออกจากระบบ`} url={`/signout`}/>
               </div>
               
               

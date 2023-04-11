@@ -37,7 +37,7 @@ export default function UpdatePersonal({data,per_id,personService,tokenID}) {
     return (
         
         <div className="container" style={{marginTop:'140px'}}>
-            <HeaderPage children={[<GirlIcon/>]} title={`ข้อมูลส่วนตัวผู้ป่วย`}/>
+            <HeaderPage children={<GirlIcon/>} title={`ข้อมูลส่วนตัวผู้ป่วย`}/>
                 <form className="justify-content-center" onSubmit={changePerson}>
                     <div className="m-2 p-2 rounded" style={{background:'#AAA8F0'}}>
                         <div className="row g-3 gap-2 ">

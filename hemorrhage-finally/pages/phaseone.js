@@ -60,7 +60,7 @@ export default function Phaseone({data ,per_id,serviceURL,tokenID}) {
     }
     return (
         <div className="container" style={{marginTop:'140px'}}>
-            <HeaderPage children={[<PostpartumIcon/>]} title={`ระยะเเรกรับ`}/>
+            <HeaderPage children={<PostpartumIcon/>} title={`ระยะเเรกรับ`}/>
             {Object.keys(phaseone).length === 0 &&
                 <form className="justify-content-center " onSubmit={submitData}>
                     <div className="row g-3 gap-2 m-2 p-2 rounded" style={{background:'#7E7CEA'}}>
@@ -144,7 +144,7 @@ export default function Phaseone({data ,per_id,serviceURL,tokenID}) {
                         </div>
                         <div className="input-group mb-2">
                             <label htmlFor="bmi" className="col-form-label text-light" >{`อ้วนมาก (BMI > 40)`}</label>
-                            <label htmlFor="bmi" className="col-form-label text-light ms-2 me-2 " >{`BMI : ${calBMI(h,w).toFixed(2)} การแปรผล : ${changeBMI(calBMI(phaseone.height,phaseone.weight).toFixed(2))}`}</label>
+                            <label htmlFor="bmi" className="col-form-label text-light ms-2 me-2 " >{`BMI : ${calBMI(h,w).toFixed(2)} การแปรผล : ${changeBMI(calBMI(h,w).toFixed(2))}`}</label>
                         </div>
                         <div className="input-group mb-2">
                             <label htmlFor="Hct" className="col-form-label text-light" >{`ความเข้มข้นเลือด`}</label>

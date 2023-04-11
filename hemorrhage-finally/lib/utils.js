@@ -22,16 +22,17 @@ export const changeBirthDayToAge = (iso) =>{
     return year
 }
 export const changeBMI = (bmi) => {
-    if (bmi < 18.5) {
+    var intBMI = Number(bmi)
+    if (intBMI < 18.5) {
         return "น้ำหนักต่ำกว่าเกณฑ์"
     }
-    else if(bmi >= 18.5 && bmi <23){
+    else if(intBMI >= 18.5 && intBMI <23){
         return "น้ำหนักสมส่วน"
     }
-    else if(bmi >= 23 && bmi < 25){
+    else if(intBMI >= 23 && intBMI < 25){
         return "น้ำหนักเกินมาตรฐาน"
     }
-    else if(bmi >= 25 && bmi < 30){
+    else if(intBMI >= 25 && intBMI < 30){
         return "อ้วน"
     }
     else{

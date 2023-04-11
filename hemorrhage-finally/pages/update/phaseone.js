@@ -55,7 +55,7 @@ export default function UpdatePhaseone({data ,per_id,serviceURL,tokenID}) {
     }
     return (
         <div className="container" style={{marginTop:'140px'}}>
-            <HeaderPage children={[<PostpartumIcon/>]} title={`ระยะเเรกรับ`}/>
+            <HeaderPage children={<PostpartumIcon/>} title={`ระยะเเรกรับ`}/>
             <form className="justify-content-center " onSubmit={changePhaseOne}>
                 <div className="row g-3 gap-2 m-2 p-2 rounded" style={{background:'#AAA8F0'}}>
                         <legend className="fs-5 text-light">เสี่ยงปานกลาง</legend>
