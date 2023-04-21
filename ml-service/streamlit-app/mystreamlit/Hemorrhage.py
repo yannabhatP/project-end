@@ -15,7 +15,7 @@ class HemorrhagePredict:
     def setBMI(self):
         self.height = st.number_input("height (ความสูง) ซม.",min_value=1,max_value=250)
         self.weight = st.number_input("weight (น้ำหนัก) กก.",min_value=1,max_value=200)
-        self.input['bmi']= self.BMI = st.number_input('BMI (ค่า BMI)',value=self.calBMI(self.weight,self.height))
+        self.input['bmi']= self.BMI = st.number_input('BMI (ค่า BMI)',value=self.calBMI(self.weight,self.height),disabled=True)
 
     def setNumberInput(self):
         self.customInputNumber('age','Age (อายุ)',1,100,1)
@@ -43,9 +43,9 @@ class HemorrhagePredict:
         if result == 0:
             st.balloons()
             st.write()
-            st.success('คุณไม่อยู่ในกลุ่มเสี่ยงของการตกเลือด')
+            st.success('คุณไม่อยู่ในกลุ่มเสี่ยงของการตกเลือด',icon="✅")
         elif result== 1:
-            st.error('คุณอยู่ในกลุ่มเสี่ยงของการตกเลือด')
+            st.error('คุณอยู่ในกลุ่มเสี่ยงของการตกเลือด',icon="🚨")
         
 
     def setButton(self):
@@ -54,10 +54,16 @@ class HemorrhagePredict:
 
     def checking(self):
         for i in self.input:
-            if self.input[i] == 0 and i != 'dm' and i != 'hxpph' and i != 'pih':
-                st.info(f"กรุณากรอกข้อมูลให้ครบถ้วน {i}")
-            elif i == "bmi" and self.input['bmi'] < 0 or self.input['bmi'] > 100:
-                st.info(f"ข้อมูลไม่ถูกต้อง (BMI)")
+            match i :
+                case 'bmi' :
+                    if self.input['bmi'] < 0 or self.input['bmi'] > 100:
+                        st.info(f"กรุณากรอกข้อมูลให้ครบถ้วน {i}")
+                        return
+                        
+                case "age" | "gestation" | "parity" | "ga" | "hct" :
+                    if self.input[i] == 0:
+                        st.info(f"กรุณากรอกข้อมูลให้ครบถ้วน {i}")
+                        return
         self.predict()
 
     def window(self):
