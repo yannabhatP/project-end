@@ -51,6 +51,7 @@ export default function Phasetwo({data,per_id,serviceURL,tokenID}) {
                                 <input id="hemorrhage" className="form-check-input" type={'radio'} name={'hemorrhage'} value={`เลือดออก`}/>
                                 <label className="form-check-label text-light" htmlFor="hemorrhage">{`เลือดออก`}</label>
                             </div>
+                            
                             <div className="col-auto form-check ms-4">
                                 <input id="hemorrhage" className="form-check-input" type={'radio'} name={'hemorrhage'} value={`มีน้ำเดิน`}/>
                                 <label className="form-check-label text-light" htmlFor="hemorrhage">{`มีน้ำเดิน`}</label>
@@ -60,6 +61,11 @@ export default function Phasetwo({data,per_id,serviceURL,tokenID}) {
                                 <label className="form-check-label text-light" htmlFor="hemorrhage">{`เจ็บครรภ์`}</label>
                             </div>
                         </div>
+                    </div>
+                    <div className="input-group mb-2">
+                        <label htmlFor="ph2inp" className="col-form-label text-light" >{`น้ำหนักทารกแรกเกิด`}</label>
+                        <input className="form-control rounded ms-2 me-2" id="ph2inp" type={'number'} name={'ph2inp'} max={10000}  min={500} required/>
+                        <label htmlFor="ph2inp" className="col-form-label text-light" >{`กรัม`}</label>
                     </div>
                     <div className="input-group mb-2 align-items-center">
                         <label htmlFor="hemorrhage1" className="col-form-label text-light" >{`ได้รับยากระตุ้นการหดรัดตัวของ มดลูกนานเกิน 24 ชั่วโมง (Prolonged oxytocin >24 hr.)`}</label>
@@ -126,6 +132,11 @@ export default function Phasetwo({data,per_id,serviceURL,tokenID}) {
                         
                     </div>
                     <div className="input-group mb-2 align-items-center">
+                        <label htmlFor="ph2inp" className="col-form-label text-light" >{`น้ำหนักทารกแรกเกิด`}</label>
+                        <label htmlFor="ph2inp" className="col-form-label text-light ms-2 me-2" >{`${phasetwo.ph2inp}`}</label>
+                        <label htmlFor="ph2inp" className="col-form-label text-light" >{`กรัม`}</label>
+                    </div>
+                    <div className="input-group mb-2 align-items-center">
                         <label htmlFor="hemorrhage1" className="col-form-label text-light" >{`ได้รับยากระตุ้นการหดรัดตัวของ มดลูกนานเกิน 24 ชั่วโมง (Prolonged oxytocin >24 hr.)`}</label>
                         <label htmlFor="hemorrhage1" className="col-form-label text-light ms-2 me-2" >{`${phasetwo.hemorrhage1}`}</label>
                     </div>
@@ -144,7 +155,7 @@ export default function Phasetwo({data,per_id,serviceURL,tokenID}) {
                 </div>
                 <div className="d-flex justify-content-center m-2">
                     <button type="submit" className="btn btn-warning ">
-                        <CustomButton icon={<EditIcon/>} text={`ตกลง`}/>
+                        <CustomButton icon={<EditIcon/>} text={`แก้ไข`}/>
                     </button>
                 </div>
             </form>

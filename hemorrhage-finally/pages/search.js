@@ -35,12 +35,20 @@ function Search({tokenID,user,tester}){
             </div>
             
             
-            <div className="d-flex justify-content-center mt-5 pt-5">
-                <Link href={tester} className="btn  d-flex align-items-center text-light" style={{background:'#4947A3'}} >
-                        <ResultIcon/>
-                        TESTER
-                </Link>
-                <CustomImageBG url={ImageAss} w={700} h={560} o={'100%'} br={"10%"}/>
+            <div className="container mt-5 pt-5">
+                <div className="col">
+                    <div className="row">
+                        <Link href={tester} className="btn  d-flex align-items-center text-light" style={{background:'#4947A3'}} >
+                                <ResultIcon/>
+                                TESTER
+                        </Link>
+                    </div>
+                    <div className="row">
+                        <CustomImageBG url={ImageAss} w={700} h={560} o={'100%'} br={"10%"}/>
+                    </div>
+                </div>
+                
+                
             </div>
         </>
 

@@ -57,6 +57,7 @@ type PhaseOne struct {
 type PhaseTwo struct {
 	Person_Id string `db:"person_id" json:"id"`
 	Hhage     string `db:"hemorrhage" json:"hemorrhage"`
+	P2I       int    `db:"ph2inp" json:"ph2inp"`
 	Hhage1    string `db:"hemorrhage1" json:"hemorrhage1"`
 	Hhage2    string `db:"hemorrhage2" json:"hemorrhage2"`
 	Hhage3    string `db:"hemorrhage3" json:"hemorrhage3"`

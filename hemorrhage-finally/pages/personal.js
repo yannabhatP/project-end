@@ -106,7 +106,7 @@ export default function Personal({data,per_id,personService,tokenID}) {
                     </div>
                     <div className="d-flex justify-content-center m-2">
                         <button type="submit" className="btn btn-warning ">
-                            <CustomButton icon={<EditIcon/>} text={`ตกลง`}/>
+                            <CustomButton icon={<EditIcon/>} text={`แก้ไข`}/>
                         </button>
                     </div>
                 </form>

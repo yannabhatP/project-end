@@ -9,7 +9,7 @@ import (
 )
 
 func getPhaseTwos() ([]model.PhaseTwo, error) {
-	query := "select hemorrhage, hemorrhage1, hemorrhage2, hemorrhage3, hemorrhage4 from phasetwo"
+	query := "select hemorrhage, ph2inp, hemorrhage1, hemorrhage2, hemorrhage3, hemorrhage4 from phasetwo"
 	pTwo := []model.PhaseTwo{}
 	err := db.Select(&pTwo, query)
 	if err != nil {
@@ -19,7 +19,7 @@ func getPhaseTwos() ([]model.PhaseTwo, error) {
 }
 
 func getPhaseTwo(id string) (*model.PhaseTwo, error) {
-	query := "select hemorrhage, hemorrhage1, hemorrhage2, hemorrhage3, hemorrhage4 from phasetwo where person_id=?"
+	query := "select hemorrhage, ph2inp, hemorrhage1, hemorrhage2, hemorrhage3, hemorrhage4 from phasetwo where person_id=?"
 	pTwo := model.PhaseTwo{}
 	err := db.Get(&pTwo, query, id)
 	if err != nil {
@@ -33,8 +33,8 @@ func addPhaseTwo(p2 model.PhaseTwo) error {
 	if err != nil {
 		return err
 	}
-	query := "insert into phasetwo (person_id, hemorrhage, hemorrhage1, hemorrhage2, hemorrhage3, hemorrhage4) value (?, ?, ?, ?, ?, ?)"
-	result, err := tx.Exec(query, p2.Person_Id, p2.Hhage, p2.Hhage1, p2.Hhage2, p2.Hhage3, p2.Hhage4)
+	query := "insert into phasetwo (person_id, hemorrhage, ph2inp, hemorrhage1, hemorrhage2, hemorrhage3, hemorrhage4) value (?, ?, ?, ?, ?, ?, ?)"
+	result, err := tx.Exec(query, p2.Person_Id, p2.Hhage, p2.P2I, p2.Hhage1, p2.Hhage2, p2.Hhage3, p2.Hhage4)
 	if err != nil {
 		return err
 	}
@@ -60,8 +60,8 @@ func editPhaseTwo(p2 model.PhaseTwo) error {
 		return err
 	}
 
-	query := "update phasetwo set hemorrhage=?, hemorrhage1=?, hemorrhage2=?, hemorrhage3=?, hemorrhage4=? where person_id=?"
-	result, err := tx.Exec(query, p2.Hhage, p2.Hhage1, p2.Hhage2, p2.Hhage3, p2.Hhage4, p2.Person_Id)
+	query := "update phasetwo set hemorrhage=?, ph2inp=? hemorrhage1=?, hemorrhage2=?, hemorrhage3=?, hemorrhage4=? where person_id=?"
+	result, err := tx.Exec(query, p2.Hhage, p2.P2I, p2.Hhage1, p2.Hhage2, p2.Hhage3, p2.Hhage4, p2.Person_Id)
 	if err != nil {
 		tx.Rollback()
 		return err
