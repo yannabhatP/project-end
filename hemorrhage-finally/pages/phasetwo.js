@@ -27,6 +27,7 @@ export default function Phasetwo({data,per_id,serviceURL,tokenID}) {
         const ph2Form = {
             id:person_id,
             hemorrhage:ev.hemorrhage.value,
+            ph2inp:Number(ev.ph2inp.value),
             hemorrhage1:ev.hemorrhage1.value,
             hemorrhage2:ev.hemorrhage2.value,
             hemorrhage3:ev.hemorrhage3.value,

@@ -21,6 +21,7 @@ export default function UpdatePhasetwo({data,per_id,serviceURL,tokenID}) {
         const ph2Form = {
           id:person_id,
           hemorrhage:event.target.hemorrhage.value,
+          ph2inp:Number(event.target.ph2inp.value),
           hemorrhage1:event.target.hemorrhage1.value,
           hemorrhage2:event.target.hemorrhage2.value,
           hemorrhage3:event.target.hemorrhage3.value,
@@ -52,6 +53,11 @@ export default function UpdatePhasetwo({data,per_id,serviceURL,tokenID}) {
                                 <label className="form-check-label text-light" htmlFor="hemorrhage">{`เจ็บครรภ์`}</label>
                             </div>
                         </div>
+                    </div>
+                    <div className="input-group mb-2">
+                        <label htmlFor="ph2inp" className="col-form-label text-light" >{`น้ำหนักทารกแรกเกิด`}</label>
+                        <input className="form-control rounded ms-2 me-2" id="ph2inp" type={'number'} name={'ph2inp'} max={10000}  min={500} defaultValue={phasetwo.ph2inp}/>
+                        <label htmlFor="ph2inp" className="col-form-label text-light" >{`กรัม`}</label>
                     </div>
                     <div className="input-group mb-2 align-items-center">
                         <label htmlFor="hemorrhage1" className="col-form-label text-light" >{`ได้รับยากระตุ้นการหดรัดตัวของ มดลูกนานเกิน 24 ชั่วโมง (Prolonged oxytocin >24 hr.)`}</label>

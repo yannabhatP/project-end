@@ -60,7 +60,7 @@ func editPhaseTwo(p2 model.PhaseTwo) error {
 		return err
 	}
 
-	query := "update phasetwo set hemorrhage=?, ph2inp=? hemorrhage1=?, hemorrhage2=?, hemorrhage3=?, hemorrhage4=? where person_id=?"
+	query := "update phasetwo set hemorrhage=?, ph2inp=?, hemorrhage1=?, hemorrhage2=?, hemorrhage3=?, hemorrhage4=? where person_id=?"
 	result, err := tx.Exec(query, p2.Hhage, p2.P2I, p2.Hhage1, p2.Hhage2, p2.Hhage3, p2.Hhage4, p2.Person_Id)
 	if err != nil {
 		tx.Rollback()
