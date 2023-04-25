@@ -64,7 +64,7 @@ export default function Phaseone({data ,per_id,serviceURL,tokenID}) {
             {Object.keys(phaseone).length === 0 &&
                 <form className="justify-content-center " onSubmit={submitData}>
                     <div className="row g-3 gap-2 m-2 p-2 rounded" style={{background:'#7E7CEA'}}>
-                        <legend className="fs-5 text-light">เสี่ยงปานกลาง</legend>
+                        <legend className="fs-5 text-light">{`กรณีความเสี่ยงปานกลาง`}</legend>
                         <div className="input-group mb-2">
                             <label htmlFor="ph1Inp" className="col-form-label text-light" >{`เคยผ่าตัดมดลูก`}</label>
                             <input className="form-control rounded ms-2 me-2" id="ph1Inp" type={'number'} name={'ph1_Inp'} max={20} required/>
@@ -130,7 +130,7 @@ export default function Phaseone({data ,per_id,serviceURL,tokenID}) {
                             </div>
                         </div>
                         <div className="input-group mb-2">
-                            <label htmlFor="ph1Inp4" className="col-form-label text-light" >{`ปริมาณน้ำหนักก่อนคลอด`}</label>
+                            <label htmlFor="ph1Inp4" className="col-form-label text-light" >{`ปริมาณน้ำหนักทารกก่อนคลอด`}</label>
                             <input className="form-control rounded ms-2 me-2" id="ph1Inp4" type={'number'} name={'ph1_Inp4'} required/>
                             <label htmlFor="ph1Inp2" className="col-form-label text-light" >{`กรัม`}</label>
                         </div>
@@ -144,7 +144,7 @@ export default function Phaseone({data ,per_id,serviceURL,tokenID}) {
                         </div>
                         <div className="input-group mb-2">
                             <label htmlFor="bmi" className="col-form-label text-light" >{`อ้วนมาก (BMI > 40)`}</label>
-                            <label htmlFor="bmi" className="col-form-label text-light ms-2 me-2 " >{`BMI : ${calBMI(h,w).toFixed(2)} การแปรผล : ${changeBMI(calBMI(h,w).toFixed(2))}`}</label>
+                            <label htmlFor="bmi" className="col-form-label text-light ms-2 me-2 " >{`BMI : ${calBMI(h,w).toFixed(2)} การแปลผล : ${changeBMI(calBMI(h,w).toFixed(2))}`}</label>
                         </div>
                         <div className="input-group mb-2">
                             <label htmlFor="Hct" className="col-form-label text-light" >{`ความเข้มข้นเลือด`}</label>
@@ -253,7 +253,7 @@ export default function Phaseone({data ,per_id,serviceURL,tokenID}) {
                                 <label className="form-check-label text-light" htmlFor="hemorrhage6">{`ไม่`}</label>
                             </div>
                         </div>
-                        <legend className="fs-5 text-light">เสี่ยงสูง</legend>
+                        <legend className="fs-5 text-light">{`กรณีความเสี่ยงสูง`}</legend>
                         <div className="input-group mb-2 align-items-center">
                             <label htmlFor="hemorrhage7" className="col-form-label text-light" >{`รกเกาะต่ำ (Placenta previa)`}</label>
                             <div className="form-check ms-4">
@@ -295,7 +295,7 @@ export default function Phaseone({data ,per_id,serviceURL,tokenID}) {
             {Object.keys(phaseone).length !== 0 &&
                 <form className="justify-content-center " onSubmit={updateData}>
                     <div className="row g-3 gap-2 m-2 p-2 rounded" style={{background:'#7E7CEA'}}>
-                        <legend className="fs-5 text-light">เสี่ยงปานกลาง</legend>
+                        <legend className="fs-5 text-light">{`กรณีความเสี่ยงปานกลาง`}</legend>
                         <div className="input-group m-2">
                             <label htmlFor="ph1Inp" className="col-form-label text-light" >{`เคยผ่าตัดมดลูก`}</label>
                             <label htmlFor="ph1Inp" className="col-form-label text-light ms-2 me-2" >{`${phaseone.phInp}`}</label>
@@ -339,7 +339,7 @@ export default function Phaseone({data ,per_id,serviceURL,tokenID}) {
                             }
                         </div>
                         <div className="input-group mb-2">
-                            <label htmlFor="ph1Inp4" className="col-form-label text-light" >{`ปริมาณน้ำหนักก่อนคลอด`}</label>
+                            <label htmlFor="ph1Inp4" className="col-form-label text-light" >{`ปริมาณน้ำหนักทารกก่อนคลอด`}</label>
                             <label htmlFor="ph1Inp4" className="col-form-label text-light ms-2 me-2 " >{`${phaseone.phInp4}`}</label>
                             <label htmlFor="ph1Inp4" className="col-form-label text-light" >{`กรัม`}</label>
                         </div>
@@ -353,7 +353,7 @@ export default function Phaseone({data ,per_id,serviceURL,tokenID}) {
                         </div>
                         <div className="input-group mb-2">
                             <label htmlFor="bmi" className="col-form-label text-light" >{`อ้วนมาก (BMI > 40)`}</label>
-                            <label htmlFor="bmi" className="col-form-label text-light ms-2 me-2 " >{`BMI : ${calBMI(phaseone.height,phaseone.weight).toFixed(2)} การแปรผล : ${changeBMI(calBMI(phaseone.height,phaseone.weight).toFixed(2))}`}</label>
+                            <label htmlFor="bmi" className="col-form-label text-light ms-2 me-2 " >{`BMI : ${calBMI(phaseone.height,phaseone.weight).toFixed(2)} การแปลผล : ${changeBMI(calBMI(phaseone.height,phaseone.weight).toFixed(2))}`}</label>
                         </div>
                         <div className="input-group mb-2">
                             <label htmlFor="Hct" className="col-form-label text-light" >{`ความเข้มข้นเลือด`}</label>
@@ -398,7 +398,7 @@ export default function Phaseone({data ,per_id,serviceURL,tokenID}) {
                             <label htmlFor="hemorrhage6" className="col-form-label text-light" >{`ได้รับยายับยั้งการคลอด`}</label>
                             <label htmlFor="hemorrhage6" className="col-form-label text-light ms-2 me-2 " >{`${phaseone.hemorrhage6}`}</label>
                         </div>
-                        <legend className="fs-5 text-light">เสี่ยงสูง</legend>
+                        <legend className="fs-5 text-light">{`กรณีความเสี่ยงสูง`}</legend>
                         <div className="input-group mb-2 align-items-center">
                             <label htmlFor="hemorrhage7" className="col-form-label text-light" >{`รกเกาะต่ำ (Placenta previa)`}</label>
                             <label htmlFor="hemorrhage7" className="col-form-label text-light ms-2 me-2 " >{`${phaseone.hemorrhage7}`}</label>

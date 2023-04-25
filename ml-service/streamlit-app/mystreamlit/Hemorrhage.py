@@ -50,7 +50,7 @@ class HemorrhagePredict:
 
     def setButton(self):
         self.submit = st.button('Predict',on_click=self.checking)
-        self.back = st.markdown('[Back](http://localhost:3002/search)')
+        self.back = st.markdown('[Back](http://eng.src.ku.ac.th:3002/search)')
 
     def checking(self):
         for i in self.input:

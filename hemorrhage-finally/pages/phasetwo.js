@@ -44,7 +44,7 @@ export default function Phasetwo({data,per_id,serviceURL,tokenID}) {
         {Object.keys(phasetwo).length === 0 &&
             <form className="justify-content-center rounded" onSubmit={submitData} >
                 <div className="row g-3 gap-2 m-2 p-2" style={{background:'#7E7CEA'}}>
-                    <legend className="fs-5 text-light">เสี่ยงปานกลาง</legend>
+                    <legend className="fs-5 text-light">{`กรณีความเสี่ยงปานกลาง`}</legend>
                     <div className="input-group mb-2  align-items-center">
                         <label htmlFor="hemorrhage" className="col-form-label text-light" >{`มาโรงพยาบาลด้วยอาการ`}</label>
                         <div className="row">
@@ -126,7 +126,7 @@ export default function Phasetwo({data,per_id,serviceURL,tokenID}) {
         {Object.keys(phasetwo).length !== 0 &&
             <form className="justify-content-center rounded" onSubmit={updateData} >
                 <div className="row g-3 gap-2 m-2 p-2" style={{background:'#7E7CEA'}}>
-                    <legend className="fs-5 text-light">เสี่ยงปานกลาง</legend>
+                    <legend className="fs-5 text-light">{`กรณีความเสี่ยงปานกลาง`}</legend>
                     <div className="input-group mb-2  align-items-center">
                         <label htmlFor="hemorrhage" className="col-form-label text-light" >{`มาโรงพยาบาลด้วยอาการ`}</label>
                         <label htmlFor="hemorrhage" className="col-form-label text-light ms-2 me-2" >{`${phasetwo.hemorrhage}`}</label>

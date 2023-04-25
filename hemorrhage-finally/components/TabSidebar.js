@@ -4,7 +4,7 @@ function TabSidebar({children,title,url}){
     const router = useRouter()
     const linkPage = () => {
         if(url === `/signout`){
-            signOut("google",{callbackUrl:"http://localhost:3000"})
+            signOut("google",{callbackUrl:"http://eng.src.ku.ac.th:3002"})
             router.push({pathname:'/'})
         }else{
             router.push({pathname:url})

@@ -30,13 +30,16 @@ export default function UpdatePhasetwo({data,per_id,serviceURL,tokenID}) {
         await axios.put(`${service}/${person_id}`,ph2Form,{headers: { Authorization: `Bearer ${tokenID}` }})
         .then(()=>router.push({pathname:'/phasetwo'}))
         .catch(err =>  alert(err))
-      }
+    }
+    const cancelEdit = () =>{
+        router.push({pathname:'/phasetwo'})
+    }
     return (
     <div className="container" style={{marginTop:'140px'}}>
         <HeaderPage children={<BabyIcon/>} title={`ระยะเเรกคลอด`}/>
             <form className="justify-content-center rounded" onSubmit={changePhaseTwo} >
                 <div className="row g-3 gap-2 m-2 p-2" style={{background:'#AAA8F0'}}>
-                    <legend className="fs-5 text-light">เสี่ยงปานกลาง</legend>
+                    <legend className="fs-5 text-light">{`กรณีความเสี่ยงปานกลาง`}</legend>
                     <div className="input-group mb-2  align-items-center">
                         <label htmlFor="hemorrhage" className="col-form-label text-light" >{`มาโรงพยาบาลด้วยอาการ`}</label>
                         <div className="row">
@@ -105,7 +108,7 @@ export default function UpdatePhasetwo({data,per_id,serviceURL,tokenID}) {
                     </div>
                 </div>
                 <div className="d-flex justify-content-between m-2">
-                    <button type="reset" className="btn btn-danger ">
+                    <button onClick={cancelEdit} className="btn btn-danger ">
                         <CustomButton icon={<UnsuccessIcon/>} text={`ยกเลิก`}/>
                     </button>
                     <button type="submit" className="btn btn-success ">

@@ -49,10 +49,7 @@ export default function Sidebar(){
                 <TabSidebar children={<UserIcon/>} title={`รายชื่อผู้ใช้`} url={`/user`}/>
                 <TabSidebar children={<LogoutIcon/>} title={`ออกจากระบบ`} url={`/signout`}/>
               </div>
-              
-              
             </div>
-            
           </div>
         </>
     )

@@ -42,16 +42,14 @@ function User({data,service,tokenID,typeUser}){
                 <div className="card-header">
                     <div className="conatiner">
                         <div className="row">
-                            <div className="col">
-                                <label className="text text-dark fs-5 fw-bold">{`ID`}</label>
-                            </div>
-                            <div className="col">
+                            
+                            <div className="col-3">
                                 <label className="text text-dark fs-5 fw-bold">{`Firstname`}</label>
                             </div>
-                            <div className="col">
+                            <div className="col-3">
                                 <label className="text text-dark fs-5 fw-bold">{`Lastname`}</label>
                             </div>
-                            <div className="col">
+                            <div className="col-3">
                                 <label className="text text-dark fs-5 fw-bold">{`email`}</label>
                             </div>
                             <div className="col">

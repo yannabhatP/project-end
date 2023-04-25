@@ -31,11 +31,11 @@ export default function UpdatePersonal({data,per_id,personService,tokenID}) {
         .then(()=>router.push({pathname:'/personal'}))
         .catch(err => alert(err))
         
-      }
-
-
+    }
+    const cancelEdit = () =>{
+        router.push({pathname:'/personal'})
+    }
     return (
-        
         <div className="container" style={{marginTop:'140px'}}>
             <HeaderPage children={<GirlIcon/>} title={`ข้อมูลส่วนตัวผู้ป่วย`}/>
                 <form className="justify-content-center" onSubmit={changePerson}>
@@ -69,7 +69,7 @@ export default function UpdatePersonal({data,per_id,personService,tokenID}) {
                         </div>
                     </div>
                     <div className="d-flex justify-content-between m-2">
-                        <button type="reset" className="btn btn-danger ">
+                        <button onClick={cancelEdit} className="btn btn-danger ">
                             <CustomButton icon={<UnsuccessIcon/>} text={`ยกเลิก`}/>
                         </button>
                         <button type="submit" className="btn btn-success ">

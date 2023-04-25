@@ -8,37 +8,31 @@ export default function ShowUser({data,index,deleteUser,sendEditUser,type}) {
     
     return (
         <>
-             <div className="conatiner" key={index}>
-                <div className="row">
-                    <div className="col">
-                        <label className="text text-dark fs-5 fw-bloder"> {`${user.id}`}</label>
+            <div className="conatiner list-group m-1 p-1" key={index}>
+                <div className="list-group-item ">
+                    <div className='row'>
+                        <div className="col-3">
+                            <label className="text text-start text-dark fs-6 fw-bloder">{`${user.fname}`}</label>
+                        </div>
+                        <div className="col-3">
+                            <label className="text text-start text-dark fs-6 fw-bloder">{`${user.lname}`}</label>
+                        </div>
+                        <div className="col-3">
+                            <label className="text text-start text-dark fs-6 fw-bloder">{`${user.email}`}</label>
+                        </div>
                     </div>
-                    <div className="col">
-                        <label className="text text-dark fs-5 fw-bloder">{`${user.fname}`}</label>
-                    </div>
-                    <div className="col">
-                        <label className="text text-dark fs-5 fw-bloder">{`${user.lname}`}</label>
-                    </div>
-                    <div className="col">
-                        <label className="text text-dark fs-5 fw-bloder">{`${user.email}`}</label>
-                    </div>
+                    
                     {type ==='DEV' &&
-                        <div className="col-auto">
-                            <button type="button" className="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target= {`#staticBackdropE${idx}`}/*data-bs-target="#staticBackdrop2"*/ > {`เเก้ไข`}</button>
+                        <div className="col-2">
+                            <button type="button" className="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target= {`#staticBackdropE${idx}`} > {`เเก้ไข`}</button>
                         </div>
                     }
                     {type === 'ADMIN' &&
-                        <>
-                            <div className="col-auto">
-                                <button type="button" className="btn btn-outline-danger"  data-bs-toggle="modal" data-bs-target={`#staticBackdropD${idx}`}>{`ลบ`}</button>
-                            </div>
-                            <div className="col-auto">
-                                <button type="button" className="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target= {`#staticBackdropE${idx}`}/*data-bs-target="#staticBackdrop2"*/ > {`เเก้ไข`}</button>
-                            </div>
-                        </>
+                        <div className="btn-group" role="group" aria-label="Basic example">
+                            <button type="button" className="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target={`#staticBackdropD${idx}`}>{`ลบ`}</button>
+                            <button type="button" className="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target= {`#staticBackdropE${idx}`}>{`เเก้ไข`}</button>
+                        </div>
                     }
-                    
-                    
                 </div>
             </div>
             {type ==='DEV' &&

@@ -18,7 +18,7 @@ export default function Home() {
           <CustomImageBG url={ImageAss} w={456} h={320} o={'100%'} br={"10%"}/>
         </div>
         <div className="d-flex justify-content-center m-5">
-          <button type="button" className="btn d-flex align-items-center" onClick={() => signIn("google",{callbackUrl:"http://localhost:3002/search"})} style={{background:'#4947A3'}}>
+          <button type="button" className="btn d-flex align-items-center" onClick={() => signIn("google",{callbackUrl:"http://eng.src.ku.ac.th:3002/search"})} style={{background:'#4947A3'}}>
             <GoogleIcon/>
             <p style={{marginTop:'1rem',color:'white',marginLeft:'1.5rem'}}>{`เข้าสู่ระบบด้วย google`}</p>
           </button>
